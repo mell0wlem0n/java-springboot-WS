@@ -15,6 +15,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+import io.swagger.v3.oas.annotations.Parameter;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,6 +28,9 @@ public class User {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "userGenerator")
     @SequenceGenerator(name = "userGenerator", sequenceName = "seq")
     private long id;
+
+    @Parameter(name = "name", description = "test description")
+
     private String username;
     private String password;
 
